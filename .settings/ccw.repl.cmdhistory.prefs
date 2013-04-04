@@ -1,0 +1,2 @@
+cmdhistory=["(app)" "( + 1 1)" "(* 6 4)" "(println \\"Hello world)" "(println \\"Hello world\\")" "(getFromDb)" "(doc slurp)" "(doc reader)" "(doc load-reader)" "(slurp \\"/Home.html\\")" "(\:import java.io.File)" "(slurp handler.clj)" "(slurp \\"handler.clj\\"0\\n       )" "(slurp \\"handler.clj\\")" "(so \\".\\")" "(.getAbsolutePath (java.io.file. \\".\\"))"]
+eclipse.preferences.version=1
