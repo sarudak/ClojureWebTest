@@ -16,7 +16,9 @@
                                   "Company Name" :company
                                   "Email" :email
                                   "Assets Under management" :estimated_aum
-                                  "Contact Name" #(str (:last_name %) "," (:first_name %)) ])})
+                                  "Contact Name" #(str (:last_name %) "," (:first_name %)) ])
+                    :TMC (columnMapping
+                           [])})
 
 (defn getDataFor [report yearmonth] 
   (hash-map :columns (report reportColumns)
