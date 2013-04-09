@@ -1,0 +1,7 @@
+(require [compojure.route :as route])
+(require hiccup.core)
+(require 'hiccup.core)
+(require 'hiccup.sword)
+(html)
+(hiccup.core/html)
+(hiccup.core/html [:script]) 
