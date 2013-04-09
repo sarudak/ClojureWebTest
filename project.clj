@@ -4,7 +4,7 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.5"]
                  [hiccup "1.0.3"]
-                 [org.clojure/java.jdbc "0.2.3"]
+                 [org.clojure/java.jdbc "LATEST"]
                  [net.sourceforge.jtds/jtds "1.2.4"]
                  ]
   :plugins [[lein-ring "0.8.2"]
