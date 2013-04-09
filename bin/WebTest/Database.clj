@@ -17,3 +17,5 @@
 )))
 
 (defn getQuickLetters [yearmonth] (returnQueryResults (str "EXEC	sp_List_QL @year_month = " yearmonth)))
+
+(defn getQuarterly [yearmonth] (returnQueryResults (str "EXEC	sp_List_QTRLY @year_month = " yearmonth)))
