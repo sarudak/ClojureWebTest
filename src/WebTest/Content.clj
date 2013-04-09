@@ -3,13 +3,8 @@
 
 (defn defaultTemplate [& body] 
   (html5 [:body
-          [:h1 "Hello world"]
+          
           body]))
-
-(defn index [message shouldDisplayMessage] 
-  (defaultTemplate [:p "This is a page of important information you should be aware of : " (if shouldDisplayMessage message)
-           [:a#GreatLink.button {:href "http://google.com"} "Go to google"]]
-    [:p "Something else to say"]))
 
 (defn reportRow [reportLine columnData] (identity
                                [:tr
@@ -17,7 +12,7 @@
                                 ]))
 
 (defn report [reportData] 
-  (defaultTemplate [:p "This is a page of important information you should be aware of : " 
+  (defaultTemplate [:h1 (name (:report reportData)) " Report"]
            [:table
             [:thead
              [:tr
@@ -25,4 +20,4 @@
               ]
              ]
             (for [row (:data reportData)] (reportRow row (:columns reportData)))
-            ]]))
+            ]))

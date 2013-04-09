@@ -9,8 +9,7 @@
   (pages/report (reports/getDataFor report yearmonth)))
 
 (defroutes app-routes
-  (GET "/" [] (pages/index "" false))
-  (GET "/Quickletters/:yearmonth" [yearmonth] (renderReport :QuickLetter yearmonth))
+  (GET "/Quickletter/:yearmonth" [yearmonth] (renderReport :QuickLetter yearmonth))
   (GET "/Quarterly/:yearmonth" [yearmonth] (renderReport :Quarterly yearmonth))
   (GET "/TMC/:yearmonth" [yearmonth] (renderReport :TMC yearmonth))
   (route/not-found "Not Found"))
