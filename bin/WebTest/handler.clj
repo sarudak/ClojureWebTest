@@ -3,18 +3,11 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [WebTest.Content :as pages]
-            [WebTest.Database :as data]
-            [WebTest.Mapping :as mapping]))
+            [WebTest.ReportSelection :as reports]))
 
 (defroutes app-routes
   (GET "/" [] (pages/index "" false))
-  (GET "/Quickletters/:yearmonth" [yearmonth] (->> (data/getQuickLetters yearmonth)
-																				           (take 500)
-																				           (pages/report)))
-  (GET "/Quarterly/:yearmonth" [yearmonth]  (->> (data/getQuarterly yearmonth)
-																			           (take 500)
-																			           (map mapping/quarterlyToView)
-																			           (pages/report)))
+  (GET "/:reportName/:yearmonth" [reportName yearmonth] (pages/report (reports/getDataFor (keyword reportName) yearmonth)))
   (route/not-found "Not Found"))
 
 (def app

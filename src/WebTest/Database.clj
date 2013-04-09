@@ -16,6 +16,8 @@
            (doall rs)
 )))
 
-(defn getQuickLetters [yearmonth] (returnQueryResults (str "EXEC	sp_List_QL @year_month = " yearmonth)))
+(def reportProcs {:QuickLetter "sp_List_QL",
+                  :Quarterly "sp_List_QTRLY"})
 
-(defn getQuarterly [yearmonth] (returnQueryResults (str "EXEC	sp_List_QTRLY @year_month = " yearmonth)))
+(defn getReport [report yearmonth] (returnQueryResults (str "EXEC " (report reportProcs) " @year_month = " yearmonth)))
+  
