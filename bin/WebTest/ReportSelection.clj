@@ -1,7 +1,6 @@
 (ns WebTest.ReportSelection
   (:use compojure.core)
-  (:require [WebTest.Database :as data]
-            [WebTest.Mapping :as mapping]))
+  (:require [WebTest.Database :as data]))
 
 (defn columnMapping [mappings]
   (map #(zipmap [:columnName :dataMapper] %) (partition 2 mappings)))
@@ -18,7 +17,8 @@
                                   "Company Name" :company
                                   "Email" :email
                                   "Assets Under management" (partial mapAsMoney :estimated_aum)
-                                  "Contact Name" #(str (:last_name %) "," (:first_name %)) ])
+                                  "Contact Name" #(str (:last_name %) "," (:first_name %))
+                                  "Something" #(str "something" (:notinthemap %))])
                     :TMC (columnMapping
                            ["Account Name" :account_name
                             "Short Name" :account_short_name
